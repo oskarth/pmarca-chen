@@ -35,16 +35,14 @@
   []
   (let [all-tweets (fetch-tweets)
         new-tweets (set/difference all-tweets @old-tweets)]
-    (do
-      (println (str "Found " (count new-tweets) " new tweets."))
-      (dorun (map maybe-retweet! new-tweets))
-      (swap! old-tweets set/union new-tweets))))
+    (do (println (str "Found " (count new-tweets) " new tweets."))
+        (dorun (map maybe-retweet! new-tweets))
+        (swap! old-tweets set/union new-tweets))))
 
 (defn periodically! [f ms]
   (future (while true (do (Thread/sleep ms) (f)))))
 
-;; NOTE: Start polling at startup
-(def pmarca-chen (periodically! fetch-and-retweet! (* 1000 60 5)))
-
-;; Evaluate this to cancel pmarca-chen
-;; (future-cancel pmarca-chen)
+(comment
+  (def pmarca-chen (periodically! fetch-and-retweet! (* 1000 60 5)))
+  (future-cancel pmarca-chen)
+  )
