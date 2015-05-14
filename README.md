@@ -1,6 +1,6 @@
 # pmarca-chen
 
-For rationale, see my post on http://experiments.oskarth.com`.
+For rationale, see my post on http://experiments.oskarth.com.
 
 What is it? A twitter bot that retweets 10% of pmarca's tweets. You
 can just go ahead and follow it at https://twitter.com/pmarca_chen,
@@ -23,10 +23,10 @@ source!
 
 ## How does it work?
 
-It polls the timeline of `@pmarca_chen` every 5 minutes using the
-Twitter REST API, removes the tweets it has already seen, and retweets
-10% of the new tweets. It then adds the newly seen tweets to the set
-of old tweets.
+It polls the timeline of https://twitter.com/pmarca_chen every 5
+minutes using the Twitter REST API, removes the tweets it has already
+seen, and retweets 10% of the new tweets. It then adds the newly seen
+tweets to the set of old tweets.
 
 ## TODO / Bugs
 
